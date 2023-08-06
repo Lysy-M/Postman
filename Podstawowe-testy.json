@@ -52,8 +52,6 @@ Sprawdź kod statusu odpowiedzi:
 Ten test sprawdza, czy odpowiedź ma oczekiwany kod statusu (w tym przypadku 200). Możesz zmienić wartość na dowolną inną, np. 201, 400 itp.
 
 Sprawdź, czy odpowiedź zawiera oczekiwany tekst:
-
-{
   "name": "Sprawdź tekst w odpowiedzi",
   "test": pm.test("Check text in response", function () {
     pm.expect(pm.response.text()).to.include('expected_text');
@@ -61,7 +59,6 @@ Sprawdź, czy odpowiedź zawiera oczekiwany tekst:
 Ten test sprawdza, czy odpowiedź zawiera określony tekst (w tym przypadku 'oczekiwany_tekst'). Możesz zmienić wartość na dowolny inny tekst.
 
 Sprawdź, czy odpowiedź zawiera oczekiwane pole w ciele odpowiedzi:
-
 
   "name": "Sprawdź pole w ciele odpowiedzi",
   "test": pm.test("Check field in response body", function () {
@@ -71,7 +68,6 @@ Ten test sprawdza, czy odpowiedź zawiera określone pole w ciele odpowiedzi. Za
 
 Sprawdź, czy odpowiedź zawiera oczekiwane wartości dla określonego pola:
 
-{
   "name": "Sprawdź wartości pola",
   "test": pm.test("Check field value", function () {
     pm.expect(pm.response.json().field_name).to.eql(expected_value);
@@ -101,7 +97,8 @@ Ten test sprawdza, czy odpowiedź zawiera pole o nazwie field_name, które jest 
 Sprawdź, czy odpowiedź zawiera oczekiwane pole o niepustej wartości:
   "name": "Sprawdź pole niepustej wartości",
   "test": "pm.expect(pm.response.json().field_name).to.not.be.empty;"
-}
+});
+
 Ten test sprawdza, czy odpowiedź zawiera pole o nazwie field_name, które nie jest puste. Zamień field_name na nazwę pola, które chcesz sprawdzić.
 
 Sprawdź, czy odpowiedź zawiera oczekiwane pole o określonej długości:
