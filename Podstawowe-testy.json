@@ -1,13 +1,12 @@
 Test sprawdzający, czy odpowiedź ma kod statusu 200:
 
-{
   "name": "Sprawdź kod statusu",
   "test": pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 
 
-{
+
   "name": "Sprawdź nagłówek",
   "test": pm.test("Response has 'Content-Type' header", function () {
     pm.response.to.have.header('Content-Type');
